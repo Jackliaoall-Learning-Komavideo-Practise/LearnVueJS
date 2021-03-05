@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="myApp">
+        <h3>Game List</h3>
+        <div v-if="seen">2017最新發表</div>
+        <ol>
+            <li v-for="game in games">{{game.title}} / {{game.price}} dollars</li>
+        </ol>
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp'
+            , data: {
+                seen: false
+                , games: [
+                    {
+                        title: '勇者斗恶龙'
+                        , price: 400
+                    }
+                    , {
+                        title: '超级马里奥'
+                        , price: 380
+                    }
+                    , {
+                        title: '我的世界'
+                        , price: 99
+                    }
+            , ]
+            , }
+        , });
+    </script>
+    
+</body>
+</html>
